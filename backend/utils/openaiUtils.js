@@ -9,7 +9,7 @@ export const generateTextResponse = async (text) => {
     try {
         const completion = await openai.chat.completions.create({
             model: "gpt-4o", // use gpt 4.0 model for generating response
-            messages: [{ role: "system", content: `You are a highly knowledgeable tutor specializing in science,math,education and technology. 
+            messages: [{ role: "system", content: `You are a highly knowledgeable tutor specializing in science,math,engineering and technology. 
                       Your goal is to help students by providing clear, accurate, and subject-related answers.Keep responses educational, concise, and engaging.give accurate answer to all questions
                       If the user asks about non-STEM topics (e.g., sports, politics, or entertainment), respond with:
                       "❌ Sorry, I can only answer STEM-related questions."` },
