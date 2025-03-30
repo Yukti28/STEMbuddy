@@ -35,7 +35,7 @@ export const textChat = async (req, res) => {
         res.status(500).json({ message: 'Error processing request', error: error.message });
     }
 };
-
+//Retrieves chat history by subject
 export const getChatHistory = async (req, res) => {
     try {
         const { subject } = req.query;
