@@ -2,7 +2,7 @@ import axios from "axios";
 import dotenv from "dotenv";
 
 dotenv.config(); // Load environment variables
-
+//Function to test API integration
 const testOpenAI = async () => {
     try {
         console.log("\n Testing OpenAI API Integration...");
