@@ -1,5 +1,5 @@
 import axios from "axios";
-
+//Function to test leaderboard
 const testLeaderboard = async () => {
     try {
         console.log("\n Fetching Leaderboard...");
