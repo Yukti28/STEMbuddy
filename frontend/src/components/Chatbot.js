@@ -60,7 +60,7 @@ const Chatbot = () => {
 
     setMessages((prev) => [...prev, { text: transcript, sender: "user" }]);
 
-    try {
+    try { //Sending text input to backend
       const botReply = await sendTextMessage(transcript, subject);
       setMessages((prev) => [...prev, { text: botReply, sender: "bot" }]);
     } catch (error) {
@@ -69,7 +69,7 @@ const Chatbot = () => {
 
     resetTranscript();
   };
-
+//Function to start and stop recording
   const handleMicClick = () => {
     if (listening) {
       SpeechRecognition.stopListening();
