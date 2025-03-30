@@ -1,5 +1,5 @@
 import User from '../models/User.models.js';
-
+// Fetch top 3 users sorted by questions asked in the given subject
 export const getLeaderboard = async (req, res) => {
     try {
         let { subject } = req.query;
@@ -11,7 +11,7 @@ export const getLeaderboard = async (req, res) => {
             return res.status(400).json({ message: "Invalid subject" });
         }
 
-        // Fetch top 3 users sorted by questions asked in the given subject
+        // Querying User collection to find top 3 users
         const topUsers = await User.find({ [`questioncounter.${subject}`]: { $exists: true } })
             .sort({ [`questioncounter.${subject}`]: -1, createdAt: 1 })
             .limit(3);
